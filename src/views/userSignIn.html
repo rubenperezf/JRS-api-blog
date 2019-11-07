@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/css">.
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src='http://localhost:3000/js'></script>
+
+    <title>Sign In</title>
+</head>
+
+<body>
+  
+        <div id='nav-placeholder'></div>
+
+    <div class="signIn-container">
+        <div class='form-row'>
+            <h1>User Sign In</h1>
+        </div>
+        <div class='form-row'>
+            <label for="un">Username:</label>
+            <input id='un' placeholder="Casey" class="signIn-form">
+        </div>
+        <div class='form-row'>
+            <label for="un">Password:</label>
+            <input id='pw' placeholder="jrsteacher" class="signIn-form">
+        </div>  
+        <div class='form-row'>
+            <button onclick="getUser2()"class="signIn-form">SUBMIT</button>
+            
+        </div>
+        
+    </div>
+    <div id='inside'></div>
+    <script>
+       //getUser2()  para imrpimir todo
+
+    let myId=0;
+function getUser2() {
+    //const uname = "ruben"
+    //const pw="perez"
+    const uname = document.getElementById('un').value
+    const pw = document.getElementById('pw').value
+    callGetPost('http://localhost:3000/user', uname, pw)
+}
+async function callGetPost(url, uname, pw) {
+    try {
+        url += `?username=${uname}&password=${pw}`
+        console.log(url)
+        let myPromise = await fetch(url);
+        let myResponse = await myPromise.json();
+        myId = myResponse[0]["_id"];
+        //window.location.href = 'http://localhost:3000/blogposts'
+        //getBlogposts(`http://localhost:3000/blogpost?user=${myId}`)
+    } catch (error) {
+        console.log(error)
+    }
+}
+    
+    </script>
+        <div class="blogpost-container">
+            <div class='form-row'>
+                <h1>Create a post</h1>
+            </div>
+            <div class='form-row'>
+                <label for="ti">Title:</label>
+                <input id='ti' placeholder="First Post">
+            </div>
+            <div class='form-row'>
+                <label for="bp">Blogpost:</label>
+                <textarea style="width: 500px; height: 100px" id='bp' placeholder="Today is Monday..."></textarea>
+            </div>
+            <div class='form-row'>
+                <button onclick="postBlogPost('http://localhost:3000/blogpost')">SUBMIT</button>
+            </div>
+        </div>
+        <div id='inside2' class="blogEntry"></div>
+    <script>
+
+        async function postBlogPost(url) {
+    try {
+        params = {
+            headers: {
+                "content-type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify({
+                user: myId,
+                title: document.getElementById('ti').value,
+                blogpost: document.getElementById('bp').value,
+                date: new Date()
+            }),
+            method: "POST"
+        }
+
+        let myPromise = await fetch(url, params)
+        console.log("my promise" + myPromise)
+        let myResponse = await myPromise.json();
+        console.log("my response" + JSON.stringify(myResponse))
+        document.getElementById('inside2').innerHTML += myResponse["title"] + '</br>'
+        document.getElementById('inside2').innerHTML += myResponse["date"] + '</br>'
+        document.getElementById('inside2').innerHTML += myResponse["blogpost"] + '</br>'
+    } catch (error) {
+        console.log(error)
+    }
+}
+    </script>
+        
+    </div>
+</body>
+
+</html>

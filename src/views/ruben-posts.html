@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/css">.
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src='http://localhost:3000/js'></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='nav-placeholder'></div>
+    <script>
+        getUser2()
+
+        let myId = 0;
+        function getUser2() {
+            const uname = "ruben"
+            const pw = "perez"
+            //const uname = document.getElementById('un').value
+            //const pw = document.getElementById('pw').value
+            callGetPost('http://localhost:3000/user', uname, pw)
+        }
+        async function callGetPost(url, uname, pw) {
+            try {
+                url += `?username=${uname}&password=${pw}`
+                console.log(url)
+                let myPromise = await fetch(url);
+                let myResponse = await myPromise.json();
+                myId = myResponse[0]["_id"];
+                //window.location.href = 'http://localhost:3000/blogposts'
+                getBlogposts2(`http://localhost:3000/blogpost?user=${myId}`)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    </script>
+    <div id="inside" class="ruben-posts"></div>
+</body>
+
+</html>
