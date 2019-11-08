@@ -57,7 +57,7 @@ const getCSS = async (request,response)=>{
 const getBackground = async (request,response)=>{
     try{
         console.log("SEND BACKGROUND PICTURE")
-        response.sendFile(path.join(__dirname + '/../images/background-4.jpg'))
+        response.sendFile(path.join(__dirname + '/../images/background.jpg'))
     } catch(error){
         response.status(500).send(error)
     }
