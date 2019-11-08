@@ -89,10 +89,11 @@ async function getBlogposts2(url){
         let data = await fetch(url)
         console.log(data)
         let myJson = await data.json()
-        console.log(myJson)
+        console.log("this is myjason" +myJson)
+        console.log(myJson[0])
 
         document.getElementById('inside').innerHTML += myJson.map(obj=>'<div class="post-container">'+
-        '<div>'+"Title: "+obj.title+'</div>'+'<div>'+"Blogpost: "+obj.blogpost+"</div>"+'</div>').reverse().join("")
+        '<div class="title-post">'+obj.title+'</div>'+'<div>'+ obj.date+"</div>"+'<div>'+ obj.blogpost+"</div>"+'</div>').reverse().join("")
 
     } catch(error){
         console.log(error)

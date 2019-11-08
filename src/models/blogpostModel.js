@@ -12,7 +12,7 @@ const blogpost = new mongoose.Schema({
         type:String//this should be a url
     },
     date:{
-        type:Date,
+        type:String,
     },
     user:{
         type:mongoose.Schema.Types.ObjectId,
