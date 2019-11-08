@@ -32,8 +32,15 @@ const routes = (app) => {
     app.route('/postsBackground')
     .get(webpageRoutes.getBackgroundPost)
 
+    app.route('/aboutMePicture')
+    .get(webpageRoutes.getImageAboutMe)
+
     app.route('/rubenPerezPosts')
     .get(webpageRoutes.rubenPerezPosts)
+
+    app.route('/aboutMe')
+    .get(webpageRoutes.aboutMePage)
+    
 }
 
 module.exports = { routes }

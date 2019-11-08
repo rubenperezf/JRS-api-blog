@@ -81,3 +81,16 @@ a:hover {
     text-align: center;
 
 }
+/*about me*/
+.about-me {
+    margin: 50px auto;
+    width: 50%;
+    text-align: center;
+    
+}
+.ruben{
+    text-align: center;
+    border-radius: 100%;
+    border: solid black 10px;
+    text-align: center;
+}

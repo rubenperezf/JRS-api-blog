@@ -19,6 +19,14 @@ const userSignInPage = async (request,response)=>{
         response.status(500).send(error)
     }
 }
+const aboutMePage = async (request,response)=>{
+    try{
+        console.log("SEND HTML TO ABOUT ME")
+        response.sendFile(path.join(__dirname + '/../views/about-me.html'))
+    } catch(error){
+        response.status(500).send(error)
+    }
+}
 const rubenPerezPosts = async (request,response)=>{
     try{
         console.log("SEND RUBEN PEREZ POSTS")
@@ -78,6 +86,14 @@ const getBackgroundPost = async (request,response)=>{
         response.status(500).send(error)
     }
 }
+const getImageAboutMe = async (request,response)=>{
+    try{
+        console.log("SEND POST ABOUT ME PICTURE")
+        response.sendFile(path.join(__dirname + '/../images/about-me.jpg'))
+    } catch(error){
+        response.status(500).send(error)
+    }
+}
 
 
 
@@ -100,4 +116,4 @@ const getNav = async (request,response)=>{
 }
 
 
-module.exports = { rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }
+module.exports = { getImageAboutMe, aboutMePage, rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }
