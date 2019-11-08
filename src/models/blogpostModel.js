@@ -11,6 +11,9 @@ const blogpost = new mongoose.Schema({
     image:{
         type:String//this should be a url
     },
+    author:{
+        type: String,
+    },
     date:{
         type:String,
     },

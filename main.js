@@ -82,10 +82,10 @@ async function getBlogposts(url){
     
 
 }
-async function getBlogposts2(url){
+async function getBlogposts2(url){3
     try{
 
-        console.log('SENDING HTTP GET')
+        console.log('SENDING RUBEN BLOG POSTS')
         let data = await fetch(url)
         console.log(data)
         let myJson = await data.json()
@@ -93,7 +93,25 @@ async function getBlogposts2(url){
         console.log(myJson[0])
 
         document.getElementById('inside').innerHTML += myJson.map(obj=>'<div class="post-container">'+
-        '<div class="title-post">'+obj.title+'</div>'+'<div>'+ obj.date+"</div>"+'<div>'+ obj.blogpost+"</div>"+'</div>').reverse().join("")
+        '<div class="title-post">'+obj.title+'</div>'+'<div>'+"Date: "+ obj.date+"</div>"+'<div>'+"Author: "+ obj.author+"</div>"+'<div>'+ obj.blogpost+"</div>"+'</div>').reverse().join("")
+
+    } catch(error){
+        console.log(error)
+    }
+    
+
+}
+async function getBlogposts3(url){
+    try{
+
+        console.log('SENDING HTTP GET')
+        let data = await fetch(url)
+        console.log(data)
+        let myJson = await data.json()
+        console.log(myJson)
+
+        document.getElementById('all-posts').innerHTML += myJson.map(obj=>'<div class="allpost-container">'+
+        '<div class="all-title-post">'+"Title: "+obj.title+'</div>'+'<div>'+ "Date: "+obj.date+'<div>'+ "Author: "+obj.author+"</div>"+"</div>"+'<div>'+ obj.blogpost+"</div>"+'</div>').reverse().join("")
 
     } catch(error){
         console.log(error)

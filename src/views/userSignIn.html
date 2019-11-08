@@ -74,6 +74,10 @@ async function callGetPost(url, uname, pw) {
                 <input id='dt' placeholder="11/08/2019">
             </div>
             <div class='form-row'>
+                    <label for="at">Author:</label>
+                    <input id='at' placeholder="Ruben Perez">
+                </div>
+            <div class='form-row'>
                 <label for="bp">Blogpost:</label>
                 <textarea style="width: 800px; height: 400px" id='bp' placeholder="Today is Monday..."></textarea>
             </div>
@@ -93,6 +97,7 @@ async function callGetPost(url, uname, pw) {
                 user: myId,
                 title: document.getElementById('ti').value,
                 date:  document.getElementById('dt').value,
+                author:  document.getElementById('at').value,
                 blogpost: document.getElementById('bp').value,
                 
             }),
@@ -105,6 +110,7 @@ async function callGetPost(url, uname, pw) {
         console.log("my response" + JSON.stringify(myResponse))
         document.getElementById('inside2').innerHTML += myResponse["title"] + '</br>'
         document.getElementById('inside2').innerHTML += myResponse["date"] + '</br>'
+        document.getElementById('inside2').innerHTML += myResponse["author"] + '</br>'
         document.getElementById('inside2').innerHTML += myResponse["blogpost"] + '</br>'
     } catch (error) {
         console.log(error)
