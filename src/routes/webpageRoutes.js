@@ -23,8 +23,14 @@ const routes = (app) => {
     app.route('/nav')
     .get(webpageRoutes.getNav)
 
-    app.route('/backgroundPicture')
-    .get(webpageRoutes.getBackground)
+    app.route('/indexBackground')
+    .get(webpageRoutes.getBackgroundIndex)
+
+    app.route('/signBackground')
+    .get(webpageRoutes.getBackgroundSign)
+
+    app.route('/postsBackground')
+    .get(webpageRoutes.getBackgroundPost)
 
     app.route('/rubenPerezPosts')
     .get(webpageRoutes.rubenPerezPosts)

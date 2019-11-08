@@ -54,14 +54,31 @@ const getCSS = async (request,response)=>{
         response.status(500).send(error)
     }
 }
-const getBackground = async (request,response)=>{
+const getBackgroundIndex = async (request,response)=>{
     try{
-        console.log("SEND BACKGROUND PICTURE")
-        response.sendFile(path.join(__dirname + '/../images/background-6.jpg'))
+        console.log("SEND INDEX BACKGROUND PICTURE")
+        response.sendFile(path.join(__dirname + '/../images/index-background.jpg'))
     } catch(error){
         response.status(500).send(error)
     }
 }
+const getBackgroundSign = async (request,response)=>{
+    try{
+        console.log("SEND SIGN BACKGROUND PICTURE")
+        response.sendFile(path.join(__dirname + '/../images/sign-background.jpg'))
+    } catch(error){
+        response.status(500).send(error)
+    }
+}
+const getBackgroundPost = async (request,response)=>{
+    try{
+        console.log("SEND POST BACKGROUND PICTURE")
+        response.sendFile(path.join(__dirname + '/../images/posts-background.jpg'))
+    } catch(error){
+        response.status(500).send(error)
+    }
+}
+
 
 
 const getJS = async (request,response)=>{
@@ -83,4 +100,4 @@ const getNav = async (request,response)=>{
 }
 
 
-module.exports = { rubenPerezPosts, getBackground, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }
+module.exports = { rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }
