@@ -86,6 +86,14 @@ const getBackgroundPost = async (request,response)=>{
         response.status(500).send(error)
     }
 }
+const getBackgroundAboutMe = async (request,response)=>{
+    try{
+        console.log("SEND ABOUT ME BACKGROUND PICTURE")
+        response.sendFile(path.join(__dirname + '/../images/aboutMe-background.jpg'))
+    } catch(error){
+        response.status(500).send(error)
+    }
+}
 const getImageAboutMe = async (request,response)=>{
     try{
         console.log("SEND POST ABOUT ME PICTURE")
@@ -116,4 +124,4 @@ const getNav = async (request,response)=>{
 }
 
 
-module.exports = { getImageAboutMe, aboutMePage, rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }
+module.exports = { getBackgroundAboutMe, getImageAboutMe, aboutMePage, rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }

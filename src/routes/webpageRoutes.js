@@ -29,6 +29,9 @@ const routes = (app) => {
     app.route('/signBackground')
     .get(webpageRoutes.getBackgroundSign)
 
+    app.route('/aboutMeBackground')
+    .get(webpageRoutes.getBackgroundAboutMe)
+
     app.route('/postsBackground')
     .get(webpageRoutes.getBackgroundPost)
 

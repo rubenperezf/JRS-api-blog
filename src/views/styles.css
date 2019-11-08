@@ -32,6 +32,12 @@ body{
     background-size: cover; /* Resize the background image to cover the entire container */
 
 }
+.aboutMe-background {
+    color: white;
+    background-image: url("http://localhost:3000/aboutMeBackground");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
 
 /*nav*/
 .nav-container {
@@ -83,9 +89,11 @@ a:hover {
 }
 /*about me*/
 .about-me {
-    margin: 50px auto;
+    margin: 0 auto;
+    margin-top: 50px;
     width: 50%;
     text-align: center;
+    padding-bottom: 20px;
     
 }
 .ruben{
