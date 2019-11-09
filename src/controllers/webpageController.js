@@ -94,6 +94,22 @@ const getBackgroundAboutMe = async (request,response)=>{
         response.status(500).send(error)
     }
 }
+const getGithubLogo = async (request,response)=>{
+    try{
+        console.log("SEND GITHUB LOGO")
+        response.sendFile(path.join(__dirname + '/../images/github-logo.png'))
+    } catch(error){
+        response.status(500).send(error)
+    }
+}
+const getLinkedinLogo = async (request,response)=>{
+    try{
+        console.log("SEND LINKEDIN LOGO")
+        response.sendFile(path.join(__dirname + '/../images/linkedin-logo.png'))
+    } catch(error){
+        response.status(500).send(error)
+    }
+}
 const getImageAboutMe = async (request,response)=>{
     try{
         console.log("SEND POST ABOUT ME PICTURE")
@@ -133,4 +149,4 @@ const getFooter = async (request,response)=>{
 }
 
 
-module.exports = { getFooter, getBackgroundAboutMe, getImageAboutMe, aboutMePage, rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }
+module.exports = { getGithubLogo, getLinkedinLogo,  getFooter, getBackgroundAboutMe, getImageAboutMe, aboutMePage, rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }

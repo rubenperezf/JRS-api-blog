@@ -41,6 +41,12 @@ const routes = (app) => {
     app.route('/aboutMePicture')
     .get(webpageRoutes.getImageAboutMe)
 
+    app.route('/github')
+    .get(webpageRoutes.getGithubLogo)
+
+    app.route('/linkedin')
+    .get(webpageRoutes.getLinkedinLogo)
+
     app.route('/rubenPerezPosts')
     .get(webpageRoutes.rubenPerezPosts)
 
