@@ -65,7 +65,7 @@ const getCSS = async (request,response)=>{
 const getBackgroundIndex = async (request,response)=>{
     try{
         console.log("SEND INDEX BACKGROUND PICTURE")
-        response.sendFile(path.join(__dirname + '/../images/index-background.jpg'))
+        response.sendFile(path.join(__dirname + '/../images/index-background-2.jpg'))
     } catch(error){
         response.status(500).send(error)
     }
