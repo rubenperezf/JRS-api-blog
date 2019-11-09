@@ -73,7 +73,7 @@ async function callPostEmail(url, email) {
         }
         let myPromise = await fetch(url, params)
         let myResponse = await myPromise.json();
-        //document.getElementById('inside').innerHTML = JSON.stringify(myResponse);
+        document.getElementById('inside').innerHTML = JSON.stringify(myResponse);
     } catch (error) {
         console.log(error)
     }
