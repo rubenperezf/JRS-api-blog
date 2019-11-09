@@ -8,6 +8,12 @@ body{
     font-family: 'McLaren', cursive;
 
 }
+.index-space {
+    padding-top:800px;
+}
+.space-sign-up {
+    padding-top:400px;
+}
 .index-background {
     color: white;
     background-image: url("http://localhost:3000/indexBackground");
@@ -118,4 +124,36 @@ a:hover {
     height: 200px;
     overflow: scroll;
     padding: 10px;
+}
+/*footer*/
+footer {
+    margin-top: 50px;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+.social-media {
+    height: 60px;
+}
+.newsletter-container input{
+    font-size: 20px;
+}
+.newsletter-container button{
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+.newsletter-container button:hover {
+    background-color: yellow;
+}
+footer a {
+    color: white;
+    text-decoration: none;
 }

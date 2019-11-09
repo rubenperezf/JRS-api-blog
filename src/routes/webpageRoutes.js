@@ -23,6 +23,9 @@ const routes = (app) => {
     app.route('/nav')
     .get(webpageRoutes.getNav)
 
+    app.route('/footer')
+    .get(webpageRoutes.getFooter)
+
     app.route('/indexBackground')
     .get(webpageRoutes.getBackgroundIndex)
 

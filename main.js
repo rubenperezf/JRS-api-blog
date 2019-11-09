@@ -2,6 +2,9 @@
 $(function () {
     $("#nav-placeholder").load("./nav");
 });
+$(function () {
+    $("#footer-placeholder").load("./footer");
+});
 
 
 function getUser() {
@@ -47,6 +50,30 @@ async function callPost(url, uname, pw) {
         let myPromise = await fetch(url, params)
         let myResponse = await myPromise.json();
         document.getElementById('inside').innerHTML = JSON.stringify(myResponse);
+    } catch (error) {
+        console.log(error)
+    }
+}
+function postEmail() {
+    const email = document.getElementById('email').value
+    callPostEmail('http://localhost:3000/newsletter', email)
+}
+
+
+async function callPostEmail(url, email) {
+    try {
+        params = {
+            headers: {
+                "content-type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify({
+            email: email
+            }),
+            method: "POST"
+        }
+        let myPromise = await fetch(url, params)
+        let myResponse = await myPromise.json();
+        //document.getElementById('inside').innerHTML = JSON.stringify(myResponse);
     } catch (error) {
         console.log(error)
     }

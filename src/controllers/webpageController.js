@@ -123,5 +123,14 @@ const getNav = async (request,response)=>{
     }
 }
 
+const getFooter = async (request,response)=>{
+    try{
+        console.log("SEND FOOTER")
+        response.sendFile(path.join(__dirname + '/../views/footer.html'))
+    } catch(error){
+        response.status(500).send(error)
+    }
+}
 
-module.exports = { getBackgroundAboutMe, getImageAboutMe, aboutMePage, rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }
+
+module.exports = { getFooter, getBackgroundAboutMe, getImageAboutMe, aboutMePage, rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }
