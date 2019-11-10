@@ -32,6 +32,9 @@ const routes = (app) => {
     app.route('/signBackground')
     .get(webpageRoutes.getBackgroundSign)
 
+    app.route('/signInBackground')
+    .get(webpageRoutes.getBackgroundSignIn)
+
     app.route('/aboutMeBackground')
     .get(webpageRoutes.getBackgroundAboutMe)
 

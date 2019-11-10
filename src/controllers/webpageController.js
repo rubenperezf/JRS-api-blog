@@ -78,6 +78,14 @@ const getBackgroundSign = async (request,response)=>{
         response.status(500).send(error)
     }
 }
+const getBackgroundSignIn = async (request,response)=>{
+    try{
+        console.log("SEND SIGN IN BACKGROUND PICTURE")
+        response.sendFile(path.join(__dirname + '/../images/sign-in-background-2.jpg'))
+    } catch(error){
+        response.status(500).send(error)
+    }
+}
 const getBackgroundPost = async (request,response)=>{
     try{
         console.log("SEND POST BACKGROUND PICTURE")
@@ -149,4 +157,4 @@ const getFooter = async (request,response)=>{
 }
 
 
-module.exports = { getGithubLogo, getLinkedinLogo,  getFooter, getBackgroundAboutMe, getImageAboutMe, aboutMePage, rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }
+module.exports = { getBackgroundSignIn, getGithubLogo, getLinkedinLogo,  getFooter, getBackgroundAboutMe, getImageAboutMe, aboutMePage, rubenPerezPosts, getBackgroundPost, getBackgroundSign, getBackgroundIndex, getIndexPage, userSignInPage, blogPostPage, createUserPage, getCSS, getJS, getNav }

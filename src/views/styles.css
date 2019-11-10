@@ -30,6 +30,14 @@ body{
     background-size: cover; /* Resize the background image to cover the entire container */
 
 }
+.sign-in-background {
+    color: white;
+    background-image: url("http://localhost:3000/signInBackground");
+    
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+
+}
 .posts-background {
     color: white;
     background-image: url("http://localhost:3000/postsBackground");
@@ -72,6 +80,7 @@ a:hover {
     text-align: center;
     margin: 0 auto;
 }
+
 
 /*ruben posts*/
 .post-container {
