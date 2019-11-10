@@ -109,7 +109,7 @@ async function getBlogposts(url){
     
 
 }
-async function getBlogposts2(url){3
+async function getBlogposts2(url){
     try{
 
         console.log('SENDING RUBEN BLOG POSTS')
